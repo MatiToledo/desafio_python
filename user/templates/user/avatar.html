@@ -1,0 +1,35 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block content %}
+
+<section class="py-5"
+  style="height: calc(100vh - 128px); min-height: cal(100vh - 128px); display: flex; justify-content: center; align-items: center;">
+  <div class="container px-5">
+    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center mb-5">
+        <h1 class="fw-bolder">Carga tu Avatar!</h1>
+      </div>
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <tr>
+              <th><label for="id_image" style="margin-top: 10px">Imagen:</label></th>
+              <td>
+                <input class="form-control" type="file" name="image" accept="image/*" id="id_image">
+              </td>
+            </tr>
+            {% if errors %}
+            {% for error in errors.image %}
+            <p style="color: red; margin: 2px;">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+            <button class="btn btn-primary" style="width: 540px; margin-top: 20px" type="submit">Cargar
+              avatar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+{% endblock %}

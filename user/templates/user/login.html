@@ -1,0 +1,51 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block content %}
+
+<section class="py-5"
+  style="height: calc(100vh - 128px); min-height: cal(100vh - 128px); display: flex; justify-content: center; align-items: center;">
+  <div class="container px-5">
+    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center mb-5">
+        <h1 class="fw-bolder">Iniciar sesion</h1>
+      </div>
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <form method="POST">{% csrf_token %}
+            <tr class="form-floating mb-3">
+              <th><label for="id_username" style="margin-top: 10px">Nombre de usuario:</label></th>
+              <td>
+                <input class="form-control" type="text" name="username" autofocus autocapitalize="none"
+                  autocomplete="username" maxlength="150" required id="id_username">
+              </td>
+              {% if errors %}
+              {% for error in errors.username %}
+              <p style="color: red; margin: 2px;">{{error}}</p>
+              {% endfor %}
+              {% endif %}
+            </tr>
+            <tr class="form-floating mb-3">
+              <th><label for="id_password" style="margin-top: 10px">Contraseña:</label></th>
+              <td>
+                <input class="form-control" type="password" name="password" autocomplete="current-password" required
+                  id="id_password">
+              </td>
+              {% if errors %}
+              {% for error in errors.password %}
+              <p style="color: red; margin: 2px;">{{error}}</p>
+              {% endfor %}
+              {% endif %}
+            </tr>
+
+            <button class="btn btn-primary" style="width: 540px; margin-top: 10px" type="submit">Iniciar
+              sesion</button>
+          </form>
+          <a href="{% url 'user:Register' %}" style="display: flex; justify-content: center; margin-top: 20px;">
+            <button type="button" class="btn btn-link">Registrarse</button>
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

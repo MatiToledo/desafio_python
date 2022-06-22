@@ -33,10 +33,10 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="">Mis Blogs</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">Mi perfil</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'user:Profile' %}">Mi perfil</a>
                         </li>
                         {% else %}
-                        <li class="nav-item"><a class="btn btn-primary" href="">Sign In</a></li>
+                        <li class="nav-item"><a class="btn btn-primary" href="{% url 'user:Login' %}">Sign In</a></li>
                         {% endif %}
                     </ul>
                 </div>

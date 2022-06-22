@@ -1,0 +1,59 @@
+{% extends "home/index.html" %}
+{% load static %}
+{% block content %}
+
+<section class="py-5">
+  <div class="container px-5">
+    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center mb-5">
+        <img src="{{url}}" width="100" height="100" style="border-radius: 50%; margin-bottom: 15px;">
+        <h1 class="fw-bolder">Perfil de {{user.username}}</h1>
+      </div>
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <form action="" method="POST">{% csrf_token %}
+            <form method="POST">{% csrf_token %}
+              <tr>
+                <th><label for="id_email" style="margin-top: 10px">Email address:</label></th>
+                <td>
+                  <input type="text" class="form-control" name="email" value="{{form.email.value}}" readonly="readonly"
+                    maxlength="254" id="id_email">
+                </td>
+                {% if errors %}
+                {% for error in errors.username %}
+                <p style="color: red; margin: 2px;">{{error}}</p>
+                {% endfor %}
+                {% endif %}
+              </tr>
+              <tr>
+                <th><label for="id_first_name" style="margin-top: 10px">Nombre:</label></th>
+                <td>
+                  <input class="form-control" type="text" value="{{form.first_name.value}}" name="first_name"
+                    maxlength="150" id="id_first_name">
+                </td>
+              </tr>
+              <tr>
+                <th><label for="id_last_name" style="margin-top: 10px">Apellido:</label></th>
+                <td>
+                  <input class="form-control" type="text" value="{{form.last_name.value}}" name="last_name"
+                    maxlength="150" id="id_last_name">
+                </td>
+              </tr>
+              <a href="{% url 'user:Avatar' %}">
+                <button type="button" style="width: 540px; margin-top: 10px" class="btn btn-secondary">Agregar/modificar
+                  foto</button>
+              </a>
+              <button class="btn btn-primary" style="width: 540px; margin-top: 20px" type="submit">Editar
+                perfil</button>
+            </form>
+          </form>
+          <a href="{% url 'user:Logout' %}">
+            <button type="button" style="width: 540px; margin-top: 60px" class="btn btn-warning">Cerrar sesión</button>
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+{% endblock %}
