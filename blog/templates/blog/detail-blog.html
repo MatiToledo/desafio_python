@@ -1,0 +1,32 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- Page content-->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Post content-->
+            <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                    <!-- Post title-->
+                    <h1 class="fw-bolder mb-1">{{blog.title}}</h1>
+                    <h2 class="fw-normal mb-1 text-muted">{{blog.subtitle}}</h2>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2">Posted on {{blog.date}} by {{blog.user_name}}</div>
+                </header>
+                <!-- Preview image figure-->
+                <figure class="mb-4"><img class="img-fluid rounded" src="/media/{{blog.image}}" alt="..." /></figure>
+                <!-- Post content-->
+                <section class="mb-5">
+                    {{blog.body | safe}}
+                </section>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -45,8 +45,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'about',
-    'user'
+    'user',
+    'blog',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar':"Full",
+        'height': 400,
+        'width': 'auto',
+        'extraPlugins': 'codesnippet',
+    },
+}
+
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

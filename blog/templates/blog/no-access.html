@@ -1,0 +1,16 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block content %}
+
+<section class="py-5"
+  style="height: calc(100vh - 128px); min-height: cal(100vh - 128px); display: flex; align-items: center;">
+  <div class="container px-5">
+    <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+      <div class="text-center mb-5">
+        <h1 class="fw-bolder">No puedes editar este Blog ya que no eres su creador</h1>
+      </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block content %}
+
+<section class="py-5" style="min-height: calc(100vh - 128px); display: flex; align-items: center;">
+  <div class="container px-5 my-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <div class="text-center">
+          {% if not myBlogs %}
+          <h2 class="fw-bolder" style="margin-bottom: 30px">No tienes blogs propios</h2>
+          {% else %}
+          <h2 class="fw-bolder" style="margin-bottom: 30px">Mis Blogs</h2>
+          {% endif %}
+          <a class="btn btn-primary" type="submit" href="{% url 'blog:Create' %}"
+            style="width: 300px;margin-bottom: 30px;">Crear Blog</a>
+        </div>
+      </div>
+    </div>
+    <div class="row gx-5">
+      {% for blog in myBlogs %}
+      <div class="col-lg-4 mb-5">
+        <div class="card h-100 shadow border-0">
+          <img class="card-img-top" src="/media/{{blog.image}}" alt="..." />
+          <div class="card-body p-4">
+            <a class="text-decoration-none link-dark stretched-link" href="{% url 'blog:Detail' blog.id %}">
+              <div class=" h5 card-title mb-3">{{blog.title}}
+              </div>
+            </a>
+            <div style="text-overflow: ellipsis;
+                      overflow: hidden;
+                      white-space: wrap;
+                      height: 100px;">
+              {{blog.body | safe}}
+            </div>
+          </div>
+          <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+            <div class="small">
+              <div class="text-muted">{{blog.date}}</div>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid;width: auto;grid-template-columns: 1fr 1fr;">
+          <a href="{% url 'blog:Edit' blog.id %}">
+            <button type="button" class="btn btn-info" style="width: 100%;">Editar</button>
+          </a>
+          <a href="{% url 'blog:Delete' blog.id %}">
+            <button type=" button" class="btn btn-danger" style="width: 100%;">Eliminar</button>
+          </a>
+
+        </div>
+        <!-- <a href="{% url 'blog:Edit' blog.id %}">
+          <button type="button" class="btn btn-secondary" style="width: 100%;">Editar</button>
+        </a> -->
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
