@@ -1,0 +1,44 @@
+{% extends "home/layout.html" %}
+{% load static %}
+{% block content %}
+
+
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">Nuestra mision es construir una pagina web utilizando Django.</h1>
+                                <p class="lead fw-normal text-muted mb-4">Como desafio final del curso de Python en CoderHouse nos propusimos a realizar una website de blogs utilizando el framework Django y dando estilo mediante Bootstrap.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Team members section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Nuestro equipo</h2>
+                        <p class="lead fw-normal text-muted mb-5">Dedicado a la calidad y el éxito</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" width="200" src="https://res.cloudinary.com/matitoledo/image/upload/v1654975871/retrato_gmgmqq.png" alt="..." />
+                                <h5 class="fw-bolder">Matías Toledo</h5>
+                                <div class="fst-italic text-muted">Programador</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" width="200" src="https://res.cloudinary.com/matitoledo/image/upload/v1654975535/Captura_de_Pantalla_2022-06-11_a_la_s_04.24.55_p._m._by9ky8.png" alt="..." />
+                                <h5 class="fw-bolder">Matías Genna</h5>
+                                <div class="fst-italic text-muted">Programador</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+{% endblock %}
