@@ -1,10 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Chat(models.Model):
-    admin = models.ForeignKey(User, on_delete=models.CASCADE)
-    participants = models.ManyToManyField(User, related_name='chats')
+    participants = models.OneToOneField(User, related_name='chats', on_delete=models.CASCADE)
 
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
