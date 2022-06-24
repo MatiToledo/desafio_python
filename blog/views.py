@@ -3,7 +3,6 @@ import datetime
 from blog.forms import BlogForm
 from blog.models import Blog
 from django.contrib.auth.models import User
-from django.views.generic.edit import  DeleteView
 from user.models import Avatar
 
 
@@ -17,9 +16,6 @@ def index(request):
 
 def myBlogs(request):
   myBlogs = Blog.objects.filter(user=request.user).values()
-  print("MYBLOGS", myBlogs)
-  
-
   return render(request, 'blog/my-blogs.html', {"myBlogs": myBlogs})
 
 # ----------------------------------------------------------------------------------------------------
