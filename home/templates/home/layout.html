@@ -33,6 +33,8 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'blog:MyBlogs' %}">Mis Blogs</a>
                         </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'chat:Index' %}">Chat</a>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'user:Profile' %}">Mi perfil</a>
                         </li>
                         {% else %}

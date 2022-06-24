@@ -6,3 +6,4 @@ from blog.models import Blog
 def index(request):
   featuredBlogs = Blog.objects.all()[1:4].values()
   return render(request, 'home/index.html',{"featuredBlogs": featuredBlogs} )
+

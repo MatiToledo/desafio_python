@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'about',
     'user',
     'blog',
+    'chat',
     'ckeditor',
     'ckeditor_uploader'
 ]

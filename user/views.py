@@ -1,13 +1,11 @@
 from django.forms.models import model_to_dict
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from user.forms import AvatarForm, UserEditForm, UserRegisterForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from user.models import Avatar
 import os
-from PIL import Image
 
 
 
