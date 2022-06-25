@@ -2,6 +2,20 @@
 
 https://desafio-python-coder.herokuapp.com/
 
+# Participantes:
+
+Matías Toledo: 
+
+  - App Blog, Home, Chat y deploy
+
+Matías Genna:
+
+  - App User, About y ayuda en los modelados
+
+# Video funcionamiento:
+
+https://drive.google.com/file/d/12YynXOGBc3EndjBzD5ffMfNOm0fOOAo8/view?usp=sharing
+
 # Instrucciones para ejecutar este proyecto
 
 - Clonar el proyecto y cambiar de rama
