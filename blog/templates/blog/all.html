@@ -3,10 +3,16 @@
 {% block content %}
 
 
-<section class="py-5">
+<section class="py-5" style="min-height: calc(100vh - 128px);display: flex; align-items: center;">
   <div class="container px-5">
     <div class="text-center">
+      {% if blogs %}
       <h2 class="fw-bolder" style="margin-bottom: 30px">Todos nuestros blogs</h2>
+      {% else %}
+      <h2 class="fw-bolder" style="margin-bottom: 30px">Aún no hay blogs</h2>
+      <a class="btn btn-primary" type="submit" href="{% url 'blog:Create' %}"
+        style="width: 300px;margin-bottom: 30px;">Crear Blog</a>
+      {% endif %}
     </div>
     <div class="row gx-5">
       {% for blog in blogs %}
